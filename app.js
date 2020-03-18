@@ -5,6 +5,8 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.use(require("./routes/"));
+app.use(require("./routes/login"));
+app.use(require("./routes/register"));
 
 app.listen(3000, () => {
   console.log("Listening on 3000");
