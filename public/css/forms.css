@@ -2,7 +2,6 @@ hr.black {
     border-top: 2px solid black;
 }
 .main-container{
-    border: 1px solid black;
     margin: auto;
     margin-top: 50px;
     width: 60%;
@@ -12,15 +11,7 @@ hr.black {
     padding: 10px;
     color: #4C243B;
 }
-.right {
-    float: right;
-    width: 350px;
-    height:480px;
-    padding: 20px;
-    
-}
-.left {
-    float: left;
-    width: 400px;
-    
+img {
+    max-width:100%;
+    height:auto;
 }
