@@ -17,18 +17,6 @@ router.post('/register', (req, res) => {
     let password = req.body.password;
     let bmr = 0;
     let weight = 0;
-
-    // db.users.create({ email: email, password: password, bmr: bmr })
-    //     .then(user => {
-    //         console.log('Creating user...')
-    //         console.log(user.bmr);
-    //         // console.log(user)
-    //         res.send('received post')
-    //     })
-    //     .catch(error => {
-    //         console.log(error)
-    //     })
-
     db.users.findOne({
         where: {
             email: email
