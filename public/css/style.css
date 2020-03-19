@@ -1,3 +1,20 @@
+.body {
+  display: flexbox;
+  text-align: center;
+  color: black;
+  background-color: #84828f;
+  margin-left: 60px;
+  padding: 25px;
+}
+
+.food-exercise {
+  padding: 2rem !important;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
 .introtext {
   font-family: "Dosis", sans-serif;
   font-size: 20px;
@@ -32,15 +49,6 @@ body {
   background-color: white;
   margin: 0;
   padding: 0;
-}
-
-.body {
-  display: flexbox;
-  text-align: center;
-  color: black;
-  background-color: #84828f;
-  margin-left: 60px;
-  padding: 25px;
 }
 
 body::-webkit-scrollbar {

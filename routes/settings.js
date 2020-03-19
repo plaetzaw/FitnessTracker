@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/profile", (req, res) => {
-  res.render("profile.ejs");
+router.get("/settings", (req, res) => {
+  res.render("settings.ejs");
 });
 
 module.exports = router;
