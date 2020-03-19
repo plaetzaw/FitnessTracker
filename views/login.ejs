@@ -12,7 +12,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="body">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -30,7 +30,33 @@
             </ul>
         </div>
     </nav>
-    <div class="main-container"></div>
+    <!-- <img class="img-resize" src="../images/fit.JPG" alt=""> -->
+    <div class="main-container">
+        <div class="row">
+            <div class="col">
+                <form action="/login" method="POST">
+                    <h2>Welcome Back !</h2>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email </label>
+                        <input name="email" type="text" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Log In</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <h2>New User ?</h2>
+                <button id="loginButton" type="button" class="btn btn-dark"> Create Account </button>
+            </div>
+        </div>
+    </div>
 
     <!-- <button id="loginButton">click !</button> -->
     <!-- bootstrap js -->

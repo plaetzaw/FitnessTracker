@@ -5,13 +5,17 @@ hr.black {
     margin: auto;
     margin-top: 50px;
     width: 60%;
-    border: 10px double #0B5351;
+    border: 10px double #2C3D55;
     padding: 10px;
-    background-color: #FFF1BE;
+    background-color: #84828F;
     padding: 10px;
-    color: #4C243B;
+    color: white;
+    font-family: "Dosis", sans-serif;
 }
-img {
-    max-width:100%;
-    height:auto;
+.img-resize {
+    width: 100%;
+    height: auto;
+}
+.body {
+background-image: url("https://redhawkgolfandresort.com/wp-content/uploads/2017/02/swim-and-fitness-background.jpg");
 }
