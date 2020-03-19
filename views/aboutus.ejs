@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Food and Exercise</title>
+    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -10,58 +10,22 @@
     />
 
     <!-- Bootstrap CSS -->
-    <script defer src="theme.js"></script>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Dosis&display=swap"
-      rel="stylesheet"
-    />
-
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <script defer src="theme.js"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Dosis&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <%- include ("./partials/template/navbar.ejs") %>
-    <div class="body introtext">
-      <H1>Exercise and Food</H1>
-      <br />
-      <br />
-      <h2>
-        Here you will be able to log your food and exercise for the day. Based
-        on your data, we will be able to project your weight loss
-      </h2>
-    </div>
-
-    <div class="body introtext">
-      <H1>Exercise Log</H1>
-    <form action="/foodexercise" method="POST">
-<input type="text" name="exercise" placeholder="exercise name">
-<input type="text" name="duration" placeholder="duration in minutes (interval of 15)">
-<br>        
-<button class="submit">Submit Exercise</button>
-    </form>
-    
-    </div>
-      
-      
-
-
-    <div class="body introtext">
-        <h1>Food Log</h1>
-    <form action="/foodexercise" method="POST">
-    <input type="text" name="food" placeholder="food">
-    <input type="text" name="calories" placeholder="calories consumed">
-    <br>    
-    <button class="submit">Submit Food</button>
-</form>
-
-        </div>
-
-    </div>
+    <div>About Us</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
