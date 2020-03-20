@@ -14,11 +14,17 @@ router.get("/register", (req, res) => {
 router.post("/register", (req, res) => {
   let email = req.body.email;
   let password = req.body.password;
-  let bmr = 0;
-  let weight = req.body.weight;
-  let age = req.body.age;
-  let height = req.body.height;
+  let weight = Number(req.body.weight);
+  let age = Number(req.body.age);
+  let height = Number(req.body.height);
   let gender = req.body.gender;
+  if (gender == "Male") {
+    bmr = 13.397 * weight + 4.799 * height - 5.677 * age + 88.362;
+  }
+  if (gender == "Female") {
+    bmr = 9.247 * weight + 3.098 * height - 4.33 * age + 447.593;
+  }
+
   db.users
     .findOne({
       where: {
@@ -40,7 +46,10 @@ router.post("/register", (req, res) => {
             height: height,
             gender: gender
           });
-
+          console.log(email);
+          console.log(weight);
+          console.log(height);
+          console.log(bmr);
           newUser
             .save()
             .then(() => res.redirect("/"))
