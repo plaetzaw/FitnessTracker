@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  ​ ​
   <head>
-    <title>Fitness App</title>
+    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    ​
+
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -18,54 +17,40 @@
       crossorigin="anonymous"
     />
     <script defer src="theme.js"></script>
-    ​
     <link rel="stylesheet" href="/css/style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Dosis&display=swap"
       rel="stylesheet"
     />
   </head>
-  ​ ​
   <body>
-    <%- include ("./partials/template/navbar.ejs") %> ​
-    <div class="body">
-      <div class="row introtext food-exercise">
-        ​<!-- Beginning of Login Form-->
-        <form action="/login" method="POST">
-          <h1>Welcome Back !</h1>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email </label>
-            <input
-              name="email"
-              type="text"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input
-              name="password"
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-            />
-          </div>
-          <button type="submit" class="btn btn-primary">Log In</button>
-        </form>
-        <!-- End of Login Form-->
-        <hr />
-        <div class="row">
-            <div class="col">
-                <h1>Already registered?</h1>
-                <form action="/login">
-                    <button type="submit" class="btn btn-dark">Login Now</button>
-            </div>
-        </div>
-      </div>
-    </div>
-    ​
+    <%- include ("./partials/template/navbar.ejs") %>
+    <div class="body introtext">
+      <h1>Settings</h1>
+      <!-- <img src="/images/StockRaiseTheBar.jpeg" height="600px" alt="raise the bar"> -->
+      Here you can update your body statistics over time so you can stay up to date with your progress.
+
+      <form action="/settings" method="POST'">
+      <input type="text" name="gender" placeholder="gender">
+      <br>
+      <input type="text" name="height" placeholder="height">
+      <br>
+      <input type="text" name="weight" placeholder="weight">
+      <br>
+      <input type="text" name="age" placeholder="age">
+      <br>
+      <button type="submit">Update</button>
+      <br>
+      <br>
+      <br>
+      
+      <img src="/images/StockShoeTying.jpeg" height="600px" alt="man tying shoes">
+
+      
+      </form>
+
+
+      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
@@ -84,5 +69,4 @@
       crossorigin="anonymous"
     ></script>
   </body>
-  ​ ​
 </html>

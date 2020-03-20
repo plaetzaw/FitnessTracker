@@ -16,7 +16,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <script defer src="theme.js"></script>
+    <!-- <script src="/js/theme.js"></script> -->
     <link rel="stylesheet" href="/css/style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Dosis&display=swap"
@@ -25,26 +25,40 @@
   </head>
   <body>
     <%- include ("./partials/template/navbar.ejs") %>
-    <div>
-      Tracker Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia
-      laboriosam, cupiditate nemo ipsam voluptate sunt consequatur est similique
-      minus a quaerat at veritatis corrupti itaque sequi ratione iste eius
-      natus. Vitae distinctio adipisci quod maxime! Voluptatum, repudiandae
-      modi? Praesentium, molestiae in soluta blanditiis quae aliquid nobis
-      pariatur, ipsa itaque numquam harum repellendus hic illum reprehenderit
-      unde! Pariatur dolore sed excepturi. Earum provident illo modi hic. Quam,
-      inventore esse. Fuga laborum aspernatur error id necessitatibus, quos enim
-      perspiciatis, iste omnis, temporibus animi quidem adipisci eaque voluptas
-      deleniti officiis sapiente consequuntur reiciendis?
+    <div class="body">
+      <h1>Profile</h1>
+      <h3>
+        From here you will be able to check your progress as you go on your
+        <b>Journey</b>
+      </h3>
+    <div class="body row introtext food-exercise">
+      <H1> Projected 4 month weight loss trend</H1>
     </div>
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto nemo impedit
-    officia, corrupti, similique totam voluptate nam explicabo repellendus
-    doloremque sunt quia corporis dicta soluta error. Nobis quisquam quis
-    mollitia!Provident earum architecto praesentium aliquam, tempore deleniti.
-    Ab velit assumenda exercitationem nam quis ad commodi, repellendus fuga
-    sapiente nihil recusandae vel nemo labore culpa iste officia saepe,
-    accusamus aliquam beatae!
+    <div class="row food-exercise">
+      <div class="col-3"></div>
+      <div class="col-6 chart-container">
+        <canvas id="lineChart" height="400px" width="400px"></canvas>
+      </div>
+      <div class="col-3"></div>
+    </div>
     <!-- Optional JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script>
+      const CHART = document.getElementById("lineChart");
+      console.log(CHART);
+      let lineChart = new Chart(CHART, {
+        type: "line",
+        data: {
+          labels: ["Mar", "Apr", "May", "Jun"],
+          datasets: [
+            {
+              label: "2020",
+              data: [200, 196, 192, 188]
+            }
+          ]
+        }
+      });
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

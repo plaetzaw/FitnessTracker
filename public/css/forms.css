@@ -1,6 +1,24 @@
 hr.black {
     border-top: 2px solid black;
 }
-.border-black{
-    border: 1px solid black;
+.main-container{
+    margin: auto;
+    margin-top: 50px;
+    width: 60%;
+    border: 10px double #2C3D55;
+    padding: 10px;
+    background-color: #84828F;
+    padding: 10px;
+    color: white;
+    font-family: "Dosis", sans-serif;
 }
+.img-resize {
+    width: 100%;
+    height: auto;
+}
+.body {
+background-image: url("https://rebalanceclt.com/wp-content/uploads/2014/09/counter-fitness-background.jpg");
+}
+/* .body2{
+    background-color: black;
+} */
