@@ -38,12 +38,16 @@
 
     <div class="body introtext">
       <H1>Exercise Log</H1>
-    <form action="/foodexercise" method="POST">
-<input type="text" name="exercise" placeholder="exercise name">
-<input type="text" name="duration" placeholder="duration in minutes (interval of 15)">
-<br>        
-<button class="submit">Submit Exercise</button>
-    </form>
+<form action="/foodexercise" method="POST">
+  <select name="exercise">
+    <% exercises.forEach(exercise => {%>
+      <option value="<%=exercise.id%>"><%=exercise.name%></option>
+    <%})%>
+  </select>
+  <input type="text" name="duration" placeholder="duration in minutes (interval of 15)">
+  <br>        
+  <button class="submit" value='exercise' name='submit'>Submit Exercise</button>
+</form>
     
     </div>
       
@@ -56,7 +60,7 @@
     <input type="text" name="food" placeholder="food">
     <input type="text" name="calories" placeholder="calories consumed">
     <br>    
-    <button class="submit">Submit Food</button>
+    <button class="submit" value='food' name="submit">Submit Food</button>
 </form>
 
         </div>

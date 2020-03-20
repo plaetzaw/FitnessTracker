@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 let db = require('../models');
 let bcrypt = require('bcrypt');
 let SALT_ROUNDS = 10;
+// const session = require('express-session')
 
 router.use(bodyParser.urlencoded({ extended: false }));
 
