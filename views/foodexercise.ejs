@@ -27,39 +27,48 @@
   </head>
   ​
   <body>
-    <%- include ("./partials/template/navbar.ejs") %> ​
-    <div class="body">
-      <div class="row introtext food-exercise">
-        <h1>Exercise and Food</h1>
-        <br />
-        <br />
-        <h2>
-          Here you will be able to log your food and exercise for the day. Based
-          on your data, we will be able to project your weight loss
-        </h2>
-      </div>
-      <div class="body row introtext food-exercise">
-        <h1>Exercise Log</h1>
-        <form action="/foodexercise" method="POST">
-          <input type="text" name="exercise" placeholder="exercise name" />
-          <input
-            type="text"
-            name="duration"
-            placeholder="duration in minutes (interval of 15)"
-          />
-          <br />
-          <button class="submit">Submit Exercise</button>
-        </form>
-      </div>
-      <div class="row body introtext food-exercise">
+
+    <%- include ("./partials/template/navbar.ejs") %>
+    <div class="body introtext">
+      <H1>Exercise and Food</H1>
+      <br />
+      <br />
+      <h2>
+        Here you will be able to log your food and exercise for the day. Based
+        on your data, we will be able to project your weight loss
+      </h2>
+    </div>
+
+    <div class="body introtext">
+      <H1>Exercise Log</H1>
+<form action="/foodexercise" method="POST">
+  <select name="exercise">
+    <% exercises.forEach(exercise => {%>
+      <option value="<%=exercise.id%>"><%=exercise.name%></option>
+    <%})%>
+  </select>
+  <input type="text" name="duration" placeholder="duration in minutes (interval of 15)">
+  <br>        
+  <button class="submit" value='exercise' name='submit'>Submit Exercise</button>
+</form>
+    
+    </div>
+      
+      
+
+
+    <div class="body introtext">
         <h1>Food Log</h1>
-        <form action="/foodexercise" method="POST">
-          <input type="text" name="food" placeholder="food" />
-          <input type="text" name="calories" placeholder="calories consumed" />
-          <br />
-          <button class="submit">Submit Food</button>
-        </form>
-      </div>
+    <form action="/foodexercise" method="POST">
+    <input type="text" name="food" placeholder="food">
+    <input type="text" name="calories" placeholder="calories consumed">
+    <br>    
+    <button class="submit" value='food' name="submit">Submit Food</button>
+</form>
+
+        </div>
+
+
     </div>
     ​
     <!-- Optional JavaScript -->
