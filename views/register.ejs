@@ -1,118 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LOGIN FORM SAMPLE</title>
-    <link rel="stylesheet" href="/css/forms.css" />
-    <!-- bootstrap styles -->
-    <script defer src="theme.js"></script>
-    ​
-    <link rel="stylesheet" href="/css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Dosis&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-  </head>
 
-  <body>
-    <%- include ("./partials/template/navbar.ejs") %> ​
-    <!-- <div class="introtext food-exercise"> -->
-    <div class="container  food-exercise border-black mt-3 pb-3">
-      <div class="row">
-        <div class="col">
-          <form action="/register" method="POST">
-            <h1>Ready To Start Your Journey !</h1>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email </label>
-              <input
-                name="email"
-                type="text"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-              />
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input
-                name="password"
-                type="password"
-                class="form-control"
-                id="exampleInputPassword1"
-              />
-            </div>
-            <div class="form-group">
-              <label for="exampleInputHeight1">Height (Feet.Inches)</label>
-              <input
-                name="height"
-                type="height"
-                class="form-control"
-                id="exampleInputHeight1"
-              />
-            </div>
-            <div class="form-group">
-              <label for="exampleInputWeight1">Weight (in pounds)</label>
-              <input
-                name="weight"
-                type="weight"
-                class="form-control"
-                id="exampleInputWeight1"
-              />
-            </div>
-            <div class="form-group">
-              <label for="exampleInputAge1">Age</label>
-              <input
-                name="age"
-                type="age"
-                class="form-control"
-                id="exampleInputAge1"
-              />
-            </div>
-            <div class="form-group">
-              <label for="exampleInputGender1">Gender</label>
-              <input
-                name="gender"
-                type="gender"
-                class="form-control"
-                id="exampleInputGender1"
-              />
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-        </div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col">
-          <h1>Already registered?</h1>
-          <form action="/login">
-            <button type="submit" class="btn btn-dark">Register Now</button>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LOGIN FORM SAMPLE</title>
+  <link rel="stylesheet" href="/css/forms.css" />
+  <!-- bootstrap styles -->
+  <script defer src="theme.js"></script>
+  ​
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+</head>
+
+<body class="body2">
+  <%- include ("./partials/template/navbar.ejs") %> ​
+  <!-- <div class="introtext food-exercise"> -->
+  <div class="container  food-exercise border-black mt-3 pb-3 main-container">
+    <div class="row">
+      <div class="col">
+        <form action="/register" method="POST">
+          <h1>Ready To Start Your Journey !</h1>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email </label>
+            <input name="email" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input name="password" type="password" class="form-control" id="exampleInputPassword1" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputHeight1">Height (Feet.Inches)</label>
+            <input name="height" type="height" class="form-control" id="exampleInputHeight1" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputWeight1">Weight (in pounds)</label>
+            <input name="weight" type="weight" class="form-control" id="exampleInputWeight1" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputAge1">Age</label>
+            <input name="age" type="age" class="form-control" id="exampleInputAge1" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputGender1">Gender</label>
+            <input name="gender" type="gender" class="form-control" id="exampleInputGender1" />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
       </div>
     </div>
-    <!-- </div> -->
-    <!-- bootstrap js -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <hr />
+    <div class="row">
+      <div class="col">
+        <h1>Already a member?</h1>
+        <form action="/login">
+          <button type="submit" class="btn btn-dark">Login Now</button>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+  <!-- bootstrap js -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
