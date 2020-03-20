@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-let db = require('./models')
 // const session = require('express-session')
 // const cookie = require('cookie-parser')
 // const SequelizeStore = require('sequelize-session-store')(session)
