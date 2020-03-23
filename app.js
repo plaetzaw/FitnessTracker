@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
-
+const http = require('http').Server(app)
+const io = require("socket.io")(http);
 let db = require('./models')
 const session = require('express-session')
 const cookie = require('cookie-parser')
@@ -8,7 +9,7 @@ app.use(cookie());
 
 app.use(session({
   secret: 'cookie',
-  cookie: {secure: false, maxAge: 24*60*60*1000}
+  cookie: { secure: false, maxAge: 24 * 60 * 60 * 1000 }
 }))
 
 app.set("view engine", "ejs");
@@ -22,7 +23,19 @@ app.use(require("./routes/foodexercise"));
 app.use(require("./routes/tracker"));
 app.use(require("./routes/aboutus"));
 app.use(require("./routes/settings"));
+app.use(require("./routes/chat"));
 
-app.listen(3000, () => {
+
+io.on('connection', (socket) => {
+  console.log('user connected')
+  socket.on('chat message', (msg) => {
+    io.emit('chat message', msg)
+  })
+})
+
+// app.listen(3000, () => {
+//   console.log("Listening on 3000");
+// });
+http.listen(3000, () => {
   console.log("Listening on 3000");
 });
