@@ -31,6 +31,7 @@
         From here you will be able to check your progress as you go on your
         <b>Journey</b>
       </h3>
+
     <div class="body row introtext food-exercise">
       <H1> Projected 4 month weight loss trend</H1>
     </div>
@@ -43,22 +44,9 @@
     </div>
     <!-- Optional JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script>
-      const CHART = document.getElementById("lineChart");
-      console.log(CHART);
-      let lineChart = new Chart(CHART, {
-        type: "line",
-        data: {
-          labels: ["Mar", "Apr", "May", "Jun"],
-          datasets: [
-            {
-              label: "2020",
-              data: [200, 196, 192, 188]
-            }
-          ]
-        }
-      });
-    </script>
+    <script src="/js/WL.js"></script>
+
+   
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
