@@ -9,7 +9,7 @@ body {
 }
 
 form {
-    background: #000;
+    background: #1f2c3e;
     padding: 3px;
     position: fixed;
     bottom: 0;
@@ -25,7 +25,7 @@ form input {
 
 form button {
     width: 9%;
-    background: rgb(130, 224, 255);
+    background: #6649b8 ;
     border: none;
     padding: 10px;
 }
@@ -41,7 +41,7 @@ form button {
 }
 
 #messages li:nth-child(odd) {
-    background: #eee;
+    background: #536271;
 }
 
 #messages {
