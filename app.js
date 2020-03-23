@@ -1,21 +1,15 @@
 const express = require("express");
 const app = express();
-// const session = require('express-session')
-// const cookie = require('cookie-parser')
-// const SequelizeStore = require('sequelize-session-store')(session)
 
-// app.use(cookie());
-// var myStore = new SequelizeStore({
-//     db: connection
-// })
-// app.use(session({
-//   secret: 'keoaubheiubaibeivaabljk',
-//   cookie: {secure: true, cookie: {maxAge: 24*60*60*1000}},
-//   store: myStore,
-//   resave: false,
-//   proxy: true
-// }));
-let db = require("./models");
+let db = require('./models')
+const session = require('express-session')
+const cookie = require('cookie-parser')
+app.use(cookie());
+
+app.use(session({
+  secret: 'cookie',
+  cookie: {secure: false, maxAge: 24*60*60*1000}
+}))
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
