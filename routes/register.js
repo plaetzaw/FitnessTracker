@@ -25,6 +25,7 @@ router.post("/register", (req, res) => {
     bmr = 9.247 * weight + 3.098 * height - 4.33 * age + 447.593;
   }
 
+
   db.users
     .findOne({
       where: {
