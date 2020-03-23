@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 let db = require('../models');
 let bcrypt = require('bcrypt');
 let SALT_ROUNDS = 10;
-// const session = require('express-session')
+const session = require('express-session')
 
 router.use(bodyParser.urlencoded({ extended: false }));
 
@@ -23,11 +23,10 @@ router.post("/login", (req, res) => {
                 bcrypt.compare(password, persistUser.password)
                     .then(success => {
                         if (success) {
-                            if (req.session) {
-                                req.session.email = email;
-                                req.session.name = persistUser.name;
-                            }
+                            req.session.email = email;
+                            req.session.name = persistUser.name;
                             console.log('user logged in')
+                            console.log(req.session.email);
                             res.redirect("/");
                         } else {
                             res.render("login", { message: "invalid information" });
