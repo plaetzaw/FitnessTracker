@@ -52,7 +52,7 @@ router.post("/register", (req, res) => {
           console.log(bmr);
           newUser
             .save()
-            .then(() => res.redirect("/"))
+            .then(() => res.redirect("/login"))
             .catch(err => console.error(err));
         });
       }
