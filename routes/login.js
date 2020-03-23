@@ -24,9 +24,13 @@ router.post("/login", (req, res) => {
                     .then(success => {
                         if (success) {
                             req.session.email = email;
-                            req.session.name = persistUser.name;
+                            let userID = persistUser.id
+                            req.session.userid = userID;
+                            req.session.bmr = persistUser.bmr;
+                            req.session.weight = persistUser.weight;
                             console.log('user logged in')
                             console.log(req.session.email);
+                            console.log(req.session.userid);
                             res.redirect("/");
                         } else {
                             res.render("login", { message: "invalid information" });
