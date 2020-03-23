@@ -4,18 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Live Chat Room</title>
+    <link rel="stylesheet" href="/css/chat.css">
 </head>
 
 <body>
-    <form action="">
+    <!-- <form action="">
         <input type="text" id="m">
         <input type="submit">
     </form>
 
-    <ul id="messages">
-
-    </ul>
+    <ul id="messages"></ul> -->
+    <ul id="messages"></ul>
+    <form action="">
+        <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
     <script>
