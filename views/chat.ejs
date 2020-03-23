@@ -4,37 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Live Chat Room</title>
+    <link rel="stylesheet" href="/css/chat.css">
 </head>
 
 <body>
+    <ul id="messages"></ul>
     <form action="">
-        <input type="text" id="m">
-        <input type="submit">
+        <input id="m" autocomplete="off" /><button>Send</button>
     </form>
 
-    <ul id="messages">
-
-    </ul>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-    <script>
-        let socket = io();
-        //emit msg
-
-        let form = document.querySelector('form')
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            let m = document.getElementById('m')
-            socket.emit('chat message', m.value);
-            return false;
-        })
-        socket.on('chat message', (msg) => {
-            let messages = document.getElementById('messages')
-            let liTag = messages.innerHTML + `<li>${msg}</li>`
-            messages.innerHTML = liTag
-        })
-    </script>
+    <script src="/js/chat.js"></script>
 </body>
 
 </html>
