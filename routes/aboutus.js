@@ -2,7 +2,11 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/aboutus", (req, res) => {
-  res.render("aboutus.ejs");
+  let userID = req.session.userid
+  res.render("aboutus.ejs", 
+  {
+    userID
+  });
 });
 
 module.exports = router;

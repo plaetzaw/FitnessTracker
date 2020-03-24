@@ -24,6 +24,7 @@ app.use(require("./routes/tracker"));
 app.use(require("./routes/aboutus"));
 app.use(require("./routes/settings"));
 app.use(require("./routes/chat"));
+app.use(require("./routes/logout"));
 
 
 io.on('connection', (socket) => {

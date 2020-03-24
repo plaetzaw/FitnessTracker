@@ -8,7 +8,11 @@ router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/settings", (req, res) => {
   console.log('updating info')
-  res.render("settings.ejs");
+  let userID = req.session.userid
+  res.render("settings.ejs",
+  {
+    userID
+  });
 });
 router.post('/settings', (req, res) => {
   let gender = req.body.gender;

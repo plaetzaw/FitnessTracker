@@ -258,3 +258,28 @@ main {
 .solar #solarIcon {
   display: block;
 }
+
+.fa-primary-login {
+  color: #02962c;
+}
+
+.fa-secondary-login {
+  color: #18fc46;
+}
+
+.fa-primary-login,
+.fa-secondary-login {
+  transition: var(--transition-speed);
+}
+.fa-primary-logout {
+  color: #ff0000;
+}
+
+.fa-secondary-logout {
+  color: #f70202;
+}
+
+.fa-primary-logout,
+.fa-secondary-logout {
+  transition: var(--transition-speed);
+}

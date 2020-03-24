@@ -6,9 +6,11 @@ router.get("/foodexercise", (req, res) => {
   db.exercies.findAll()
   .then(results => {
     let exercises = results;
+    let userID = req.session.userid
     res.render("foodexercise", 
     {
-      exercises
+      exercises,
+      userID
     });
   })
 });

@@ -8,7 +8,10 @@ let SALT_ROUNDS = 10;
 router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/register", (req, res) => {
-  res.render("register.ejs");
+  let userID = req.session.userid
+  res.render("register.ejs", {
+    userID
+  });
 });
 
 router.post("/register", (req, res) => {
