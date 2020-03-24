@@ -15,6 +15,14 @@ app.use(session({
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
+// let auth = (req, res, next) => {
+//   if (req.session.userid) {
+//     next();
+//   }
+//   else {
+//     res.redirect('/login')
+//   }
+// }
 app.use(require("./routes/profilePage"));
 app.use(require("./routes/"));
 app.use(require("./routes/login"));
@@ -33,9 +41,7 @@ io.on('connection', (socket) => {
   })
 })
 
-// app.listen(3000, () => {
-//   console.log("Listening on 3000");
-// });
+
 http.listen(3000, () => {
   console.log("Listening on 3000");
 });
