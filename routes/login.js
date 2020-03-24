@@ -44,7 +44,10 @@ router.post("/login", (req, res) => {
 })
 
 router.get('/login', (req, res) => {
-    res.render('login.ejs');
+    let userID = req.session.userID
+    res.render('login.ejs', {
+        userID
+    });
 });
 
 module.exports = router;

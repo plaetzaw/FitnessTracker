@@ -20,7 +20,11 @@ let auth = (req, res, next) => {
 
 router.get("/settings", auth, (req, res) => {
   console.log('updating info')
-  res.render("settings.ejs");
+  let userID = req.session.userid
+  res.render("settings.ejs",
+  {
+    userID
+  });
 });
 
 router.post('/settings', auth, (req, res) => {
