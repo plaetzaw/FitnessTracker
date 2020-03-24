@@ -5,13 +5,25 @@ let db = require('../models');
 
 router.use(bodyParser.urlencoded({ extended: false }));
 
+let auth = (req, res, next) => {
+  if (req.session.userid) {
+    next();
+  }
+  else {
+    res.redirect('/login')
+  }
+}
+// format to add auth fun to routes
+// app.get('/protected', auth, (req, res) => {
+//   res.send('protected')
+// })
 
-router.get("/settings", (req, res) => {
+router.get("/settings", auth, (req, res) => {
   console.log('updating info')
   res.render("settings.ejs");
 });
 
-router.post('/settings', (req, res) => {
+router.post('/settings', auth, (req, res) => {
   console.log("SENDING POST FROM SETTINGS")
   console.log(req.body)
   let gender = req.body.gender;
@@ -39,8 +51,8 @@ router.post('/settings', (req, res) => {
   })
     .then(() => {
       console.log("Updated the user info")
-      //res.redirect("tracker")
-      res.status(200).json({ message: "It did the thing!" })
+      res.redirect("/tracker")
+      // res.status(200).json({ message: "It did the thing!" })
     })
     .catch(err => console.error(err));
 
