@@ -32,99 +32,127 @@
         <b>Journey</b>
       </h3>
 
-    <div class="body row introtext food-exercise">
-      <H1> Projected 4 month weight loss trend</H1>
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="introtext settings col-5">
+          <H1> Projected 4 Month Weight Loss Trend</H1>
+
+          Your current BMR is: <%= bmr %>
+          <br />
+          Your current weight is: <%= weight %> lbs
+          <br />
+          After a month, your projected weight is:<%= ProjectedMonthlyWeight %>
+          lbs.
+          <br />
+
+          After two months, your projected weight is: <%= TwoMonthLoss %> lbs.
+          <br />
+
+          After three months, your projected weight is: <%= ThreeMonthLoss %>
+          lbs.
+          <br />
+
+          After four months, your projected weight is: <%= FourMonthLoss %> lbs.
+        </div>
+        <div class="col-6">
+          <br />
+          <br />
+          <img src="/images/fit.JPG" width="1000px" alt="FIT" />
+        </div>
+      </div>
+
+      <div class="parallax1"></div>
+
+      <div class="row food-exercise">
+        <!-- <div class="col-3" id="chartDiv">hello world</div> -->
+        <div class="col-6 chart-container">
+          <canvas id="lineChart" height="400px" width="400px"></canvas>
+        </div>
+        <!-- <div class="col-3" id="chartDiv">hello world</div> -->
+      </div>
     </div>
-    <div class="introtext food-exercise">
-      Your projected monthly weight will be <b><%= ProjectedMonthlyWeight %></b>
-      <br><br>
+    <div class="parallax2"></div>
 
-      If you continue to eat and exercise at this rate, after two months you will weigh be <b><%= TwoMonthLoss %></b>
-      <br><br>
-
-      If you continue to eat and exercise at this rate, after three months you will weigh <b><%= ThreeMonthLoss %></b>
-      <br><br>
-
-      If you continue to eat and exercise at this rate, after four months you will weigh <b><%= FourMonthLoss %></b>
+    <div class="introtext" id="FAQ">
+      <h1>Q&A</h1>
+      <h3>What is BMR?</h3>
+      Your BMR is your basal metabolic rate, in simple terms, it means the
+      amount of calories burned while your body is at rest.
+      <br />
+      <br />
+      <h3>How do you calculate your BMR and is it an exact number?</h3>
+      Every human body is different. There is no perfect way to calculate an
+      individual's BMR without medical equipment. There are several existing
+      forumals on how to calculate it, for our project we the Revised
+      Harris-Benedict model
+      <br />
+      <br />
+      <h3>How do you calculate weight loss?</h3>
+      Our project projects your estimated daily weight loss and pushes it out
+      over the course of a week. From there, we can estimate a month out and
+      even beyond.
 
       <div class="hiddenInfo" id="1month"><%= ProjectedMonthlyWeight %></div>
       <div class="hiddenInfo" id="2month"><%= TwoMonthLoss %></div>
       <div class="hiddenInfo" id="3month"><%= ThreeMonthLoss %></div>
       <div class="hiddenInfo" id="4month"><%= FourMonthLoss %></div>
-
-
-
     </div>
 
-    <div class="row food-exercise">
-      <div class="col-3"></div>
-      <div class="col-6 chart-container">
-        <canvas id="lineChart" height="400px" width="400px"></canvas>
-      </div>
-      <div class="col-3"></div>
-    </div>
     <!-- Optional JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script>
-    window.onload = function() {
-      var month = new Array();
-            month[0] = "January";
-            month[1] = "February";
-            month[2] = "March";
-            month[3] = "April";
-            month[4] = "May";
-            month[5] = "June";
-            month[6] = "July";
-            month[7] = "August";
-            month[8] = "September";
-            month[9] = "October";
-            month[10] = "November";
-            month[11] = "December";
-            var d = new Date();
-            const n = month[d.getMonth()];
-            const o = month[d.getMonth() + 1];
-            const p = month[d.getMonth() + 2];
-            const q = month[d.getMonth() + 3];
+      window.onload = function() {
+        var month = new Array();
+        month[0] = "January";
+        month[1] = "February";
+        month[2] = "March";
+        month[3] = "April";
+        month[4] = "May";
+        month[5] = "June";
+        month[6] = "July";
+        month[7] = "August";
+        month[8] = "September";
+        month[9] = "October";
+        month[10] = "November";
+        month[11] = "December";
+        var d = new Date();
+        const n = month[d.getMonth()];
+        const o = month[d.getMonth() + 1];
+        const p = month[d.getMonth() + 2];
+        const q = month[d.getMonth() + 3];
 
-            const CHART = document.getElementById("lineChart");
+        const CHART = document.getElementById("lineChart");
 
+        var oneMonthLoss = document.getElementById("1month");
+        let oneMonthLossFloat = Number(oneMonthLoss.innerHTML);
+        var twoMonthLoss = document.getElementById("2month");
+        let twoMonthLossFloat = Number(twoMonthLoss.innerHTML);
+        var threeMonthLoss = document.getElementById("3month");
+        let threeMonthLossFloat = Number(threeMonthLoss.innerHTML);
+        var fourMonthLoss = document.getElementById("4month");
+        let fourMonthLossFloat = Number(fourMonthLoss.innerHTML);
 
-            var oneMonthLoss = document.getElementById("1month")
-            let oneMonthLossFloat = Number(oneMonthLoss.innerHTML)
-            var twoMonthLoss = document.getElementById("2month");
-            let twoMonthLossFloat = Number(twoMonthLoss.innerHTML)
-            var threeMonthLoss = document.getElementById("3month");
-            let threeMonthLossFloat = Number(threeMonthLoss.innerHTML)
-            var fourMonthLoss = document.getElementById("4month");
-            let fourMonthLossFloat = Number(fourMonthLoss.innerHTML)
-
-
-
-
-
-
-            console.log(CHART);
-            let lineChart = new Chart(CHART, {
-              type: "line",
-              data: {
-                labels: [n, o, p, q],
-                datasets: [
-                  {
-                    label: "2020",
-                    data: [
-                      oneMonthLossFloat,
-                      twoMonthLossFloat,
-                      threeMonthLossFloat,
-                      fourMonthLossFloat
-                    ]
-                  }
+        console.log(CHART);
+        let lineChart = new Chart(CHART, {
+          type: "line",
+          data: {
+            labels: [n, o, p, q],
+            datasets: [
+              {
+                label: "2020",
+                data: [
+                  oneMonthLossFloat,
+                  twoMonthLossFloat,
+                  threeMonthLossFloat,
+                  fourMonthLossFloat
                 ]
               }
-            });
-            };
+            ]
+          }
+        });
+      };
     </script>
 
-   
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

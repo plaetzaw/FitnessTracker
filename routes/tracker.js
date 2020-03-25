@@ -91,7 +91,9 @@ router.get("/tracker", (req, res) => {
             ProjectedMonthlyWeight: req.session.ProjectedMonthlyWeight,
             TwoMonthLoss: req.session.TwoMonthLoss,
             ThreeMonthLoss: req.session.ThreeMonthLoss,
-            FourMonthLoss: req.session.FourMonthLoss
+            FourMonthLoss: req.session.FourMonthLoss,
+            bmr: req.session.bmr,
+            weight: req.session.weight
           });
         })
         .catch(err => {

@@ -1,3 +1,52 @@
+.parallax1 {
+  /* The image used */
+  background-image: url("../images/fitness1.jpeg");
+
+  /* Set a specific height */
+  height: 600px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax2 {
+  /* The image used */
+  background-image: url("../images/fitness2.jpeg");
+
+  /* Set a specific height */
+  height: 600px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#chartDiv {
+  background-color: #6a687a;
+}
+
+#FAQ {
+  background-color: #84828f;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.settings {
+  padding: 2rem !important;
+  text-align: left;
+  display: flex;
+  flex-flow: column;
+  align-items: left;
+  font-size: xx-large;
+}
+
 .hiddenInfo {
   visibility: hidden;
 }
@@ -9,8 +58,8 @@
 .chart-container {
   display: flexbox;
   align-content: center;
-  height: 400px;
-  width: 400px;
+  height: 800px;
+  width: 800px;
 }
 
 .body {
