@@ -1,16 +1,18 @@
 const express = require("express");
 const app = express();
-const http = require('http').Server(app)
+const http = require("http").Server(app);
 const io = require("socket.io")(http);
-let db = require('./models')
-const session = require('express-session')
-const cookie = require('cookie-parser')
+let db = require("./models");
+const session = require("express-session");
+const cookie = require("cookie-parser");
 app.use(cookie());
 
-app.use(session({
-  secret: 'cookie',
-  cookie: { secure: false, maxAge: 24 * 60 * 60 * 1000 }
-}))
+app.use(
+  session({
+    secret: "cookie",
+    cookie: { secure: false, maxAge: 24 * 60 * 60 * 1000 }
+  })
+);
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -34,13 +36,12 @@ app.use(require("./routes/settings"));
 app.use(require("./routes/chat"));
 app.use(require("./routes/logout"));
 
-
-io.on('connection', (socket) => {
-  console.log('user connected')
-  socket.on('chat message', (msg) => {
-    io.emit('chat message', msg)
-  })
-})
+io.on("connection", socket => {
+  console.log("user connected");
+  socket.on("chat message", msg => {
+    io.emit("chat message", msg);
+  });
+});
 
 
 http.listen(3000, () => {
