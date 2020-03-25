@@ -1,3 +1,19 @@
+#Matt {
+  background-color: #2c3d55;
+}
+
+#Daniela {
+  background-color: #536271;
+}
+
+#Alex {
+  background-color: #3e4c5e;
+}
+
+#aboutUsDiv {
+  background-image: url("../images/galaxy.jpg");
+}
+
 .parallax1 {
   /* The image used */
   background-image: url("../images/fitness1.jpeg");
@@ -36,6 +52,15 @@
   display: flex;
   flex-flow: column;
   align-items: center;
+}
+
+.FAQ {
+  padding: 2rem !important;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  color: whitesmoke;
 }
 
 .settings {
