@@ -23,14 +23,18 @@
     Here you can update your body statistics over time so you can stay up to date with your progress.
     <form action="/settings" method="POST">
       <br>
-      <input type="text" name="gender" placeholder="gender">
-      <br>
       <input type="text" name="height" placeholder="height">
       <br>
       <input type="text" name="weight" placeholder="weight">
       <br>
       <input type="text" name="age" placeholder="age">
       <br>
+      <!-- <input type="text" name="gender" placeholder="gender">
+      <br> -->
+      <select id="gender" name="gender">
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+      </select>
 
       <button type="submit" class="btn btn-dark">Update</button>
     </form>
