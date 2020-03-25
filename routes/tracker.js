@@ -85,6 +85,7 @@ router.get("/tracker", (req, res) => {
         .then(() => {
           console.log("===DONE===");
           res.render("tracker.ejs", {
+            userID: req.session.userid,
             calories: req.session.calories,
             exercise: req.session.exercise,
             ProjectedMonthlyWeight: req.session.ProjectedMonthlyWeight,
