@@ -7,112 +7,97 @@ router.get("/tracker", (req, res) => {
   let weight = req.session.weight;
   let userExerciseData = [];
   let userCaloriesData = [];
-
   db.userExercise
     .findAll({
+      attributes: [
+        "id",
+        "exerciseID",
+        "caloriesBurned",
+        "userID",
+        "createdAt",
+        "updatedAt"
+      ],
       where: {
-        userid: req.session.userid
+        userID: req.session.userid
       }
     })
     .then(exercises => {
-      console.log("===FOUND EXERCISES===")
+      console.log("===FOUND EXERCISES===");
       exercises.forEach(exercise => {
         req.session.caloriesBurned += exercise;
         userExerciseData.push(exercise);
       });
     })
     .then(() => {
-      console.log("===LOOKING FOR CALORIES===")
-      db.calorieIntakes.findAll({
-        where: {
-          userid: req.session.userid
-        }
-      })
-      .then(foods => {
-        console.log("===FOUND CALORIES===")
-        foods.forEach(calories => {
-          req.session.calories += calories;
-          userCaloriesData.push(calories);
-  
-          let DailyWeightLoss = bmr + userExerciseData - userCaloriesData;
-  
-          let WeeklyChange = DailyWeightLoss * 7;
-  
-          let WeeklyWeightLoss = WeeklyChange / 3500;
-  
-          let ProjectedWeeklyWeight = weight - WeeklyWeightLoss;
-  
-          let MonthlyWeightLoss = (WeeklyChange * 4) / 3500;
-  
-          let ProjectedMonthlyWeight = weight - MonthlyWeightLoss;
-  
-          let TwoMonthLoss = weight - 2 * MonthlyWeightLoss;
-  
-          let ThreeMonthLoss = weight - 3 * MonthlyWeightLoss;
-  
-          let FourMonthLoss = weight - 4 * MonthlyWeightLoss;
-          console.log("THESE ARE THE VARIABLES")
-          console.log(DailyWeightLoss);
-          console.log(WeeklyChange);
-          console.log(WeeklyWeightLoss);
-          console.log(MonthlyWeightLoss);
-          console.log(ProjectedWeeklyWeight);
-          console.log(ProjectedMonthlyWeight);
-          console.log(TwoMonthLoss);
-          console.log(ThreeMonthLoss);
-          console.log(FourMonthLoss);
-  
-          window.onload = function() {
-            var month = new Array();
-            month[0] = "January";
-            month[1] = "February";
-            month[2] = "March";
-            month[3] = "April";
-            month[4] = "May";
-            month[5] = "June";
-            month[6] = "July";
-            month[7] = "August";
-            month[8] = "September";
-            month[9] = "October";
-            month[10] = "November";
-            month[11] = "December";
-            var d = new Date();
-            const n = month[d.getMonth()];
-            const o = month[d.getMonth() + 1];
-            const p = month[d.getMonth() + 2];
-            const q = month[d.getMonth() + 3];
-  
-            const CHART = document.getElementById("lineChart");
-            console.log(CHART);
-            let lineChart = new Chart(CHART, {
-              type: "line",
-              data: {
-                labels: [n, o, p, q],
-                datasets: [
-                  {
-                    label: "2020",
-                    data: [
-                      ProjectedMonthlyWeight,
-                      TwoMonthLoss,
-                      ThreeMonthLoss,
-                      FourMonthLoss
-                    ]
-                  }
-                ]
-              }
-            });
-          };
+      console.log("===LOOKING FOR CALORIES===");
+      db.calorieIntake
+        .findAll({
+          attributes: ["id", "calories", "userID", "createdAt", "updatedAt"],
+          where: {
+            userID: req.session.userid
+          }
+        })
+        .then(foods => {
+          console.log("===FOUND CALORIES===");
+          foods.forEach(calories => {
+            req.session.calories += calories;
+            userCaloriesData.push(calories);
+
+            let DailyWeightLoss =
+              bmr + userExerciseData[0].caloriesBurned - calories.calories;
+
+            let WeeklyChange = DailyWeightLoss * 7;
+
+            let WeeklyWeightLoss = WeeklyChange / 3500;
+
+            let ProjectedWeeklyWeight = weight - WeeklyWeightLoss;
+
+            let MonthlyWeightLoss = (WeeklyChange * 4) / 3500;
+
+            let ProjectedMonthlyWeight = weight - MonthlyWeightLoss;
+
+            let TwoMonthLoss = weight - 2 * MonthlyWeightLoss;
+
+            let ThreeMonthLoss = weight - 3 * MonthlyWeightLoss;
+
+            let FourMonthLoss = weight - 4 * MonthlyWeightLoss;
+
+            console.log("THESE ARE THE VARIABLES");
+            console.log(weight);
+            console.log(bmr);
+            console.log(calories.calories);
+            console.log(userExerciseData[0].caloriesBurned);
+            console.log(DailyWeightLoss);
+            console.log(WeeklyChange);
+            console.log(WeeklyWeightLoss);
+            console.log(MonthlyWeightLoss);
+            console.log(ProjectedWeeklyWeight);
+            console.log(ProjectedMonthlyWeight);
+            console.log(TwoMonthLoss);
+            console.log(ThreeMonthLoss);
+            console.log(FourMonthLoss);
+            req.session.ProjectedMonthlyWeight = ProjectedMonthlyWeight;
+            req.session.TwoMonthLoss = TwoMonthLoss;
+            req.session.ThreeMonthLoss = ThreeMonthLoss;
+            req.session.FourMonthLoss = FourMonthLoss;
+          });
+        })
+        .then(() => {
+          console.log("===DONE===");
+          res.render("tracker.ejs", {
+            calories: req.session.calories,
+            exercise: req.session.exercise,
+            ProjectedMonthlyWeight: req.session.ProjectedMonthlyWeight,
+            TwoMonthLoss: req.session.TwoMonthLoss,
+            ThreeMonthLoss: req.session.ThreeMonthLoss,
+            FourMonthLoss: req.session.FourMonthLoss
+          });
+        })
+        .catch(err => {
+          console.error(err);
+          res.status(500).json({ error: err });
         });
-      })
-      .then(() => {
-        console.log("===DONE===")
-        res.render("tracker.ejs");
-      })
-      .catch(err => {
-        console.error(err)
-        res.status(500).json({error: err})
-      })
-    })
+    });
 });
 
 module.exports = router;
