@@ -5,7 +5,29 @@
 	margin: 0;
 	padding: 0;
 }
-body{
+/* body{
+	background: url('https://www.inquickr.com/wp-content/uploads/2018/12/break-workout_602724.jpg') center no-repeat;
+	background-size: cover;
+	color: #333;
+	font-size: 18px;
+	font-family: 'Raleway', sans-serif;
+} */
+.settings{
+	background: url('https://parade.com/wp-content/uploads/2020/01/best-workout-apps-FTR.jpg') center no-repeat;
+	background-size: cover;
+	color: #333;
+	font-size: 18px;
+	font-family: 'Raleway', sans-serif;
+}
+
+.login{
+	background: url('https://getweightfast.com/wp-content/uploads/2020/03/skinny-guy-workout-plan-bodybuilding-routine.jpg') center no-repeat;
+	background-size: cover;
+	color: #333;
+	font-size: 18px;
+	font-family: 'Raleway', sans-serif;
+}
+.register{
 	background: url('https://www.inquickr.com/wp-content/uploads/2018/12/break-workout_602724.jpg') center no-repeat;
 	background-size: cover;
 	color: #333;
