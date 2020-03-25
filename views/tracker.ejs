@@ -87,12 +87,17 @@
             const q = month[d.getMonth() + 3];
 
             const CHART = document.getElementById("lineChart");
-            document.getElementById("1month")
-            console.log(oneMonthLoss);
+
+
+            var oneMonthLoss = document.getElementById("1month")
+            let oneMonthLossFloat = Number(oneMonthLoss.innerHTML)
             var twoMonthLoss = document.getElementById("2month");
-            console.log(twoMonthLoss);
+            let twoMonthLossFloat = Number(twoMonthLoss.innerHTML)
             var threeMonthLoss = document.getElementById("3month");
+            let threeMonthLossFloat = Number(threeMonthLoss.innerHTML)
             var fourMonthLoss = document.getElementById("4month");
+            let fourMonthLossFloat = Number(fourMonthLoss.innerHTML)
+
 
 
 
@@ -107,10 +112,10 @@
                   {
                     label: "2020",
                     data: [
-                      oneMonthLoss,
-                      twoMonthLoss,
-                      threeMonthLoss,
-                      fourMonthLoss
+                      oneMonthLossFloat,
+                      twoMonthLossFloat,
+                      threeMonthLossFloat,
+                      fourMonthLossFloat
                     ]
                   }
                 ]
