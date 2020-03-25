@@ -22,9 +22,9 @@ router.get("/settings", auth, (req, res) => {
   console.log('updating info')
   let userID = req.session.userid
   res.render("settings.ejs",
-  {
-    userID
-  });
+    {
+      userID
+    });
 });
 
 router.post('/settings', auth, (req, res) => {
@@ -34,7 +34,8 @@ router.post('/settings', auth, (req, res) => {
   let height = req.body.height;
   let weight = req.body.weight;
   let age = req.body.age;
-  // let userid = 56;
+  let userID = req.session.userid
+  // let userid: req.session.id;
   if (gender == "Male") {
     bmr = 13.397 * weight + 4.799 * height - 5.677 * age + 88.362;
   }
@@ -50,7 +51,7 @@ router.post('/settings', auth, (req, res) => {
     age: age
   }, {
     where: {
-      id: 56
+      id: userID
     }
   })
     .then(() => {

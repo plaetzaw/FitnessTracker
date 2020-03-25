@@ -56,7 +56,7 @@ router.post("/register", (req, res) => {
           console.log(bmr);
           newUser
             .save()
-            .then(() => res.redirect("/login"))
+            .then(() => res.redirect("/"))
             .catch(err => console.error(err));
         });
       }
