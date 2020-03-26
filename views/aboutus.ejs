@@ -1,125 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <script defer src="theme.js"></script>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Dosis&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
-  <body>
-    <%- include ("./partials/template/navbar.ejs") %>
-    <div class="fluid-container" id="aboutUsDiv">
-      <div class="introtext FAQ">
-        <h1>About Us</h1>
-        <br />
-        <h5>
-          We are a group of full-stack development students working on our first
-          full-stack project.
-        </h5>
-        <br />
-        This project utilized: HTML5, CSS, JavaScript, Node, Express, Sequelize,
-        and more!
-        <br />
-        <br />
-        <h1>The Team</h1>
-      </div>
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-      <div class="introtext row">
-        <div class="col-2"></div>
-        <div class="card col-3" id="Matt">
-          <img
-            src="/images/Matt.jpeg"
-            class="profilePic"
-            alt="John"
-            style="width:100%"
-          />
-          <h1>Matt Ryan</h1>
-          <p class="title">Backend, Databases</p>
-          <a href="#"><i class="fa fa-linkedin"></i></a>
-          <a href="https://github.com/matthewtryan99"
-            ><i class="fa fa-github"></i
-          ></a>
-        </div>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <script defer src="theme.js"></script>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
 
-        <div class="card col-3" id="Daniela">
-          <img
-            src="/images/Daniela.jpeg"
-            class="profilePic"
-            alt="Danielle"
-            style="width:100%"
-          />
-          <h1>Daniela Arroyo</h1>
-          <p class="title">Authentication, Chat</p>
-          <a href="https://www.linkedin.com/in/darroyo97/"
-            ><i class="fa fa-linkedin"></i
-          ></a>
-          <a href="https://github.com/darroyo97"
-            ><i class="fa fa-github"></i
-          ></a>
-        </div>
-
-        <div class="card fluid-container col-3" id="Alex">
-          <img
-            src="/images/Alex.jpg"
-            class="profilePic"
-            alt="Alex"
-            style="width:100%"
-          />
-          <h1>Alex Plaetzer</h1>
-          <p class="title">Frontend, Weight Loss Formulas</p>
-          <a href="https://www.linkedin.com/in/alexander-plaetzer-4543341a1/"
-            ><i class="fa fa-linkedin"></i
-          ></a>
-          <a href="https://github.com/plaetzaw"><i class="fa fa-github"></i></a>
-        </div>
-        <div class="col-1"></div>
-      </div>
-
-      <div class="introtext FAQ">
-        <H1>Want to learn more about our program?</H1>
-
-        <a href="https://www.digitalcrafts.com/houston-campus.html"
-          >Click here</a
-        >to learn more about our full-stack program
-      </div>
+<body>
+  <%- include ("./partials/template/navbar.ejs") %>
+  <div class="fluid-container" id="aboutUsDiv">
+    <div class="introtext FAQ">
+      <h1>About Us</h1>
+      <br />
+      <h5>
+        We are a group of full-stack development students working on our first
+        full-stack project.
+      </h5>
+      <br />
+      This project utilized: HTML5, CSS, JavaScript, Node, Express, Sequelize,
+      and more!
+      <br />
+      <br />
+      <h1>The Team</h1>
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+
+    <div class="introtext row">
+      <div class="col-2"></div>
+      <div class="card col-3" id="Matt">
+        <img src="/images/Matt.jpeg" class="profilePic" alt="John" style="width:100%" />
+        <h1>Matt Ryan</h1>
+        <p class="title">Backend, Databases</p>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/matthewtryan99"><i class="fa fa-github"></i></a>
+      </div>
+
+      <div class="card col-3" id="Daniela">
+        <img src="/images/Daniela.jpeg" class="profilePic" alt="Danielle" style="width:100%" />
+        <h1>Daniela Arroyo</h1>
+        <p class="title">Authentication, Chat, FrontEnd</p>
+        <a href="https://www.linkedin.com/in/darroyo97/"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/darroyo97"><i class="fa fa-github"></i></a>
+      </div>
+
+      <div class="card fluid-container col-3" id="Alex">
+        <img src="/images/Alex.jpg" class="profilePic" alt="Alex" style="width:100%" />
+        <h1>Alex Plaetzer</h1>
+        <p class="title">Frontend, Weight Loss Formulas</p>
+        <a href="https://www.linkedin.com/in/alexander-plaetzer-4543341a1/"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/plaetzaw"><i class="fa fa-github"></i></a>
+      </div>
+      <div class="col-1"></div>
+    </div>
+
+    <div class="introtext FAQ">
+      <H1>Want to learn more about our program?</H1>
+
+      <a href="https://www.digitalcrafts.com/houston-campus.html">Click here</a>to learn more about our full-stack
+      program
+    </div>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
