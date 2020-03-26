@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Tracker</title>
+    <title>Fitness Tracker</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -26,15 +26,21 @@
   <body>
     <%- include ("./partials/template/navbar.ejs") %>
     <div class="body">
-      <h1>Profile</h1>
+      <h1>Fitness Tracker</h1>
       <h3>
         From here you will be able to check your progress as you go on your
         <b>Journey</b>
       </h3>
 
-      <div class="row">
-        <div class="col-1"></div>
-        <div class="introtext settings col-5">
+      <!-- <div class="row">
+        <div class="col-12 fluid-container food-exercise">
+          <br />
+          <br />
+          <img src="/images/fit.JPG" alt="FIT" />
+          </div>
+        </div> -->
+
+        <div class="introtext food-exercise">
           <H1> Projected 4 Month Weight Loss Trend</H1>
 
           Your current BMR is: <%= bmr %>
@@ -53,11 +59,6 @@
           <br />
 
           After four months, your projected weight is: <%= FourMonthLoss %> lbs.
-        </div>
-        <div class="col-6">
-          <br />
-          <br />
-          <img src="/images/fit.JPG" width="1000px" alt="FIT" />
         </div>
       </div>
 
