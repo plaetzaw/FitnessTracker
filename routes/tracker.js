@@ -1,8 +1,22 @@
 const express = require("express");
 const router = express.Router();
+const bodyParser = require('body-parser');
 let db = require("../models");
 
-router.get("/tracker", (req, res) => {
+router.use(bodyParser.urlencoded({ extended: false }));
+
+
+let auth = (req, res, next) => {
+  if (req.session.userid) {
+    next();
+  }
+  else {
+    res.redirect('/login')
+  }
+}
+
+
+router.get("/tracker", auth, (req, res) => {
   let bmr = req.session.bmr;
   let weight = req.session.weight;
   let userExerciseData = [];
