@@ -19,6 +19,13 @@
 	font-size: 18px;
 	font-family: 'Raleway', sans-serif;
 }
+.food{
+	background: url('https://askmuscle.com/wp-content/uploads/2019/02/food-heart-dumbbells-fitness-abstract-healthy-healthy-eating-habits-ss-Feature.jpg') center no-repeat;
+	background-size: cover;
+	color: #333;
+	font-size: 18px;
+	font-family: 'Raleway', sans-serif;
+}
 
 .login{
 	background: url('https://getweightfast.com/wp-content/uploads/2020/03/skinny-guy-workout-plan-bodybuilding-routine.jpg') center no-repeat;
